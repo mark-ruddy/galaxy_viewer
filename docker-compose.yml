@@ -1,0 +1,19 @@
+version: '3.1'
+services:
+  db:
+    image: postgres
+    restart: always
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: password
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rake webpacker:install && bundle exec rake webpacker:compile && bundle exec rake db:migrate && rails assets:precompile && bundle exec rails s -p 80 -b '0.0.0.0'"
+    volumes:
+      - .:/my_app
+      - /my_app/node_modules
+    ports:
+      - "80:80"
+    depends_on:
+      - db

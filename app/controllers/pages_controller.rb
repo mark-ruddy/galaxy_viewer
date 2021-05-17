@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   before_action :set_error_msg
 
-  @@planetary = NasaApi::Planetary.new  
+  @@planetary = NasaApi::Planetary.new
   @@mars = NasaApi::Mars.new
 
   def index
