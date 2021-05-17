@@ -1,13 +1,14 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
+      <%= link_to 'Galaxy Viewer', root_path, class: 'navbar-brand' %>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
+      <li class="<%= active_class(root_path) %>"><%= link_to 'APOD', root_path %></li>
+      <li class="<%= active_class(epic_path) %>"><%= link_to 'EPIC', epic_path %></li>
+      <li class="<%= active_class(earth_path) %>"><%= link_to 'Earth Imagery', earth_path %></li>
+      <li class="<%= active_class(mars_path) %>"><%= link_to 'Mars Rover', mars_path %></li>
     </ul>
   </div>
 </nav>
+

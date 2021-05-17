@@ -22,7 +22,56 @@
   border-radius: 0 !important;
 }
 
-.nav > li > span {
-  display: block;
+body {
+  background-color: #282828;
 }
+
+.center-h {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 10px;
+}
+
+.date-input {
+  border: 1px solid #000;
+  font-size: 16px;
+  padding: 3px;
+  align: center;
+}
+
+.center-img {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  color: #fff;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+  color: #fff;
+}
+
 

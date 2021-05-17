@@ -6,13 +6,13 @@
 </div>
 <br><br>
 
-<% if @apod.is_a?(NasaApi::Error) %>
+<% if @epic.is_a?(NasaApi::Error) %>
   <div class='container-fluid'>
-    <h3 style="text-align: center"><%= @error_msg %></h3>
+    <h3 style="text-align: center">The submitted information was invalid or the demo API key has expired</h3>
   </div>
 <% else %>
   <div class='container-fluid w-100 center-img'>
-    <img src="<%= @apod.url %>" class="img-fluid w-100" alt="APOD picture">
+    <img src="<%= @latest_epic_image %>" class="img-fluid w-100" alt="APOD picture">
   </div>
 <% end %>
 
