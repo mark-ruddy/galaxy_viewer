@@ -1,1 +1,19 @@
-<h1>Earth</h1>
+<div class='center-h'>
+  <form action='/' method='GET'>
+      <input type='text' class='std-input' name='lat' placeholder='latitude'>
+      <input type='text' class='std-input' name='lon' placeholder='longitude'>
+      <button type='submit' class='btn btn-primary'>Go</button>
+  </form>
+</div>
+<br><br>
+
+<% if @earth.is_a?(NasaApi::Error) %>
+  <div class='container-fluid'>
+    <h3 style="text-align: center"><%= @error_msg %></h3>
+  </div>
+<% else %>
+  <div class='container-fluid w-100 center-img'>
+    <img src="<%= @earth.url %>" class="img-fluid w-100" alt="APOD picture">
+  </div>
+<% end %>
+

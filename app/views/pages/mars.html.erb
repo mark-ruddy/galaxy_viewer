@@ -1,1 +1,18 @@
-<h1>Mars</h1>
+<div class='center-h'>
+  <form action='/' method='GET'>
+      <input type='text' class='std-input' name='date' placeholder='Mars Sols'>
+      <button type='submit' class='btn btn-primary'>Go</button>
+  </form>
+</div>
+<br><br>
+
+<% if @rover.is_a?(NasaApi::Error) %>
+  <div class='container-fluid'>
+    <h3 style="text-align: center"><%= @error_msg %></h3>
+  </div>
+<% else %>
+  <div class='container-fluid w-100 center-img'>
+    <img src="<%= @mars.photos[-1]['img_src'] %>" class="img-fluid w-100" alt="APOD picture">
+  </div>
+<% end %>
+

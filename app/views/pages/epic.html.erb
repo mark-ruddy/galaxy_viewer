@@ -1,6 +1,6 @@
 <div class='center-h'>
   <form action='/' method='GET'>
-      <input type='date' class='date-input' name='date'>
+      <input type='date' class='std-input' name='date'>
       <button type='submit' class='btn btn-primary'>Go</button>
   </form>
 </div>
@@ -8,11 +8,11 @@
 
 <% if @epic.is_a?(NasaApi::Error) %>
   <div class='container-fluid'>
-    <h3 style="text-align: center">The submitted information was invalid or the demo API key has expired</h3>
+    <h3 style="text-align: center"><%= @error_msg %></h3>
   </div>
 <% else %>
   <div class='container-fluid w-100 center-img'>
-    <img src="<%= @latest_epic_image %>" class="img-fluid w-100" alt="APOD picture">
+    <img src="<%= @epic.image_url[-1] %>" class="img-fluid w-100" alt="APOD picture">
   </div>
 <% end %>
 
